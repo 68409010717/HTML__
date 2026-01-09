@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Input</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-btn">กลับหน้าสารบัญ</a>
+<h1>Input</h1>
+<div class="editor-container">
+<div class="code-box">
+<div class="label">
+<span>HTML Input</span>
+<button class="run-btn" onclick="runCode()">Run</button>
+</div>
+<textarea id="sourceCode"><input type='text'></textarea>
+</div>
+<div class="preview-box">
+<div class="label">Result</div>
+<iframe id="targetFrame"></iframe>
+</div>
+</div>
+</div>
+<script>
+function runCode(){
+var c=document.getElementById('sourceCode').value;
+var f=document.getElementById('targetFrame').contentWindow.document;
+f.open();f.write(c);f.close();
+}
+window.onload=runCode;
+</script>
+</body>
+</html>
